@@ -3,6 +3,7 @@ package com.adri.main;
 import static com.adri.main.Main.MOD_ID;
 
 import com.adri.main.blocks.FirstBlock;
+import com.adri.main.blocks.FirstBlockTile;
 import com.adri.main.blocks.ModBlocks;
 import com.adri.main.items.FirstItem;
 import com.adri.main.setup.ClientProxy;
@@ -13,6 +14,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -54,6 +56,11 @@ public class Main {
                     .group(setup.itemGroup);
             event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
             event.getRegistry().register(new FirstItem());
+        }
+
+        @SubscribeEvent
+        public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event){
+            event.getRegistry().register(TileEntityType.Builder.create(FirstBlockTile::new, ModBlocks.FIRSTBLOCK).build(null).setRegistryName("firstblock"));
         }
     }
 }

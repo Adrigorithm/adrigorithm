@@ -1,6 +1,12 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "adrigorithm:block/firstblock"
+    "particle": "adrigorithm:block/firstblock",
+    "down": "adrigorithm:block/firstblock",
+    "up": "adrigorithm:block/firstblock",
+    "east": "adrigorithm:block/firstblock",
+    "west": "adrigorithm:block/firstblock",
+    "north": "adrigorithm:block/firstblock_front",
+    "south": "adrigorithm:block/firstblock"
   }
 }

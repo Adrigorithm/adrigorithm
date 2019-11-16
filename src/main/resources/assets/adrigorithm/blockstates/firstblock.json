@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": { "model": "adrigorithm:block/firstblock" }
+    "facing=north": { "model": "adrigorithm:block/firstblock" },
+    "facing=south": { "model": "adrigorithm:block/firstblock", "y": 180 },
+    "facing=west": { "model": "adrigorithm:block/firstblock", "y": 270 },
+    "facing=east": { "model": "adrigorithm:block/firstblock", "y": 90 },
+    "facing=up": { "model": "adrigorithm:block/firstblock", "x": -90 },
+    "facing=down": { "model": "adrigorithm:block/firstblock", "x": 90 }
   }
 }

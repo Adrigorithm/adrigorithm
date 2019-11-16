@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "x": {
+      "item": "adrigorithm:firstblock"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "adrigorithm:firstitem"
+  }
+}

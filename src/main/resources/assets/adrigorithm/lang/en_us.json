@@ -1,3 +1,7 @@
 {
-  "block.adrigorithm.firstblock": "Adrium Block"
+  "item.adrigorithm.firstitem": "Adrium Pickaxe",
+  "block.adrigorithm.firstblock": "Adrium Block",
+
+  "_comment": "Creative Tabs",
+  "itemGroup.adrigorithm": "Adrigorithm"
 }

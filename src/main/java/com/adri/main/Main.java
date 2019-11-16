@@ -4,8 +4,10 @@ import static com.adri.main.Main.MOD_ID;
 
 import com.adri.main.blocks.FirstBlock;
 import com.adri.main.blocks.ModBlocks;
+import com.adri.main.items.FirstItem;
 import com.adri.main.setup.ClientProxy;
 import com.adri.main.setup.IProxy;
+import com.adri.main.setup.ModSetup;
 import com.adri.main.setup.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -26,7 +28,7 @@ public class Main {
     public static final String MOD_ID = "adrigorithm";
     private static final Logger LOGGER = LogManager.getLogger();
     public static IProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> ServerProxy::new);
-
+    public static ModSetup setup = new ModSetup();
 
 
     public Main(){
@@ -35,8 +37,8 @@ public class Main {
     }
 
     private void setup(final FMLCommonSetupEvent event){
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        setup.init();
+        proxy.init();
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -48,7 +50,10 @@ public class Main {
 
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event){
-            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, new Item.Properties()).setRegistryName("firstblock"));
+            Item.Properties properties = new Item.Properties()
+                    .group(setup.itemGroup);
+            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
+            event.getRegistry().register(new FirstItem());
         }
     }
 }

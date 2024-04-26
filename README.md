@@ -1,10 +1,4 @@
 <div align="center">
-  <img height="200" src="https://www.womansworld.com/wp-content/uploads/2020/09/fall-cats-3.jpg"  />
-</div>
-
-###
-
-<div align="left">
   <a href="https://linkedin.com/in/a3w" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
   </a>
